@@ -25,28 +25,38 @@ export default function HeroSection() {
           </h2>
           
           <p className="text-gray-400 max-w-3xl mx-auto text-lg leading-relaxed mb-8">
-            Platform otomatisasi untuk audit pengiriman J&T Express yang menyinkronkan data dari 
-            <span className="text-orange-400 font-semibold"> 2 outlet</span>, memvalidasi terhadap data 
-            <span className="text-blue-400 font-semibold"> YoYi</span>, dan mencocokkan pembayaran 
-            <span className="text-green-400 font-semibold"> QRIS/BCA</span> secara real-time.
+            Platform otomatisasi full-stack untuk audit pengiriman J&T Express dengan arsitektur modern:
+            <span className="text-orange-400 font-semibold"> Google Apps Script</span> sebagai backend,
+            <span className="text-blue-400 font-semibold"> Google Sheets</span> sebagai database,
+            <span className="text-green-400 font-semibold"> Vercel</span> untuk hosting frontend, dan
+            <span className="text-purple-400 font-semibold"> Github</span> untuk source code.
           </p>
 
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <div className="bg-gray-800/50 border border-gray-700 rounded-xl px-5 py-3">
-              <div className="text-2xl font-bold text-orange-400">16</div>
-              <div className="text-xs text-gray-400">Header Kolom</div>
+              <div className="text-2xl font-bold text-green-400">📊</div>
+              <div className="text-xs text-gray-400">Google Sheets</div>
+              <div className="text-[10px] text-gray-500">Database</div>
             </div>
             <div className="bg-gray-800/50 border border-gray-700 rounded-xl px-5 py-3">
-              <div className="text-2xl font-bold text-blue-400">5</div>
-              <div className="text-xs text-gray-400">Tab Database</div>
+              <div className="text-2xl font-bold text-orange-400">⚡</div>
+              <div className="text-xs text-gray-400">Apps Script</div>
+              <div className="text-[10px] text-gray-500">Backend</div>
             </div>
             <div className="bg-gray-800/50 border border-gray-700 rounded-xl px-5 py-3">
-              <div className="text-2xl font-bold text-green-400">2</div>
-              <div className="text-xs text-gray-400">Outlet Aktif</div>
+              <div className="text-2xl font-bold text-purple-400">🐙</div>
+              <div className="text-xs text-gray-400">GitHub</div>
+              <div className="text-[10px] text-gray-500">Source Code</div>
             </div>
             <div className="bg-gray-800/50 border border-gray-700 rounded-xl px-5 py-3">
-              <div className="text-2xl font-bold text-purple-400">4</div>
-              <div className="text-xs text-gray-400">Menu Fungsi</div>
+              <div className="text-2xl font-bold text-blue-400">▲</div>
+              <div className="text-xs text-gray-400">Vercel</div>
+              <div className="text-[10px] text-gray-500">Hosting</div>
+            </div>
+            <div className="bg-gray-800/50 border border-gray-700 rounded-xl px-5 py-3">
+              <div className="text-2xl font-bold text-yellow-400">🤖</div>
+              <div className="text-xs text-gray-400">Qwen Coder</div>
+              <div className="text-[10px] text-gray-500">Developer</div>
             </div>
           </div>
 

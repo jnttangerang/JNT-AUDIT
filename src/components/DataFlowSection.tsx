@@ -205,7 +205,7 @@ export default function DataFlowSection() {
 
       {/* Quick Summary */}
       <div className="mt-10 bg-gray-800/30 border border-gray-700 rounded-xl p-6">
-        <h3 className="text-lg font-bold text-orange-400 mb-4">📊 Ringkasan Alur</h3>
+        <h3 className="text-lg font-bold text-orange-400 mb-4">📊 Ringkasan Alur Backend</h3>
         <div className="flex flex-wrap items-center justify-center gap-2 text-sm">
           <span className="bg-blue-500/20 text-blue-400 px-3 py-1.5 rounded-lg">Outlet Sheets</span>
           <span className="text-gray-500">→</span>
@@ -220,6 +220,62 @@ export default function DataFlowSection() {
           <span className="bg-red-500/20 text-red-400 px-3 py-1.5 rounded-lg">Dashboard_Audit</span>
           <span className="text-gray-500">+</span>
           <span className="bg-emerald-500/20 text-emerald-400 px-3 py-1.5 rounded-lg">Kas_Outlet</span>
+        </div>
+      </div>
+
+      {/* Full-Stack Integration */}
+      <div className="mt-8 bg-gray-800/30 border border-gray-700 rounded-xl p-6">
+        <h3 className="text-lg font-bold text-purple-400 mb-4">🌐 Integrasi Full-Stack (Frontend ↔ Backend)</h3>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="bg-purple-500/5 border border-purple-500/20 rounded-lg p-4">
+            <div className="text-sm font-bold text-purple-400 mb-2">1. Frontend (Vercel)</div>
+            <p className="text-xs text-gray-400 mb-2">React app di-host di Vercel, memanggil API Apps Script.</p>
+            <pre className="text-[10px] text-gray-500 font-mono bg-gray-900 rounded p-2 overflow-x-auto">
+{`fetch(API_URL + '?action=getAudit')
+  .then(res => res.json())
+  .then(data => setAudit(data));`}
+            </pre>
+          </div>
+          <div className="bg-orange-500/5 border border-orange-500/20 rounded-lg p-4">
+            <div className="text-sm font-bold text-orange-400 mb-2">2. Backend (Apps Script)</div>
+            <p className="text-xs text-gray-400 mb-2">Web App endpoint menerima request, query database.</p>
+            <pre className="text-[10px] text-gray-500 font-mono bg-gray-900 rounded p-2 overflow-x-auto">
+{`function doGet(e) {
+  const action = e.parameter.action;
+  if (action === 'getAudit') {
+    return readDashboardAudit();
+  }
+}`}
+            </pre>
+          </div>
+          <div className="bg-green-500/5 border border-green-500/20 rounded-lg p-4">
+            <div className="text-sm font-bold text-green-400 mb-2">3. Database (Sheets)</div>
+            <p className="text-xs text-gray-400 mb-2">Apps Script membaca/menulis data via SpreadsheetApp.</p>
+            <pre className="text-[10px] text-gray-500 font-mono bg-gray-900 rounded p-2 overflow-x-auto">
+{`const sheet = ss.getSheetByName(
+  'Dashboard_Audit'
+);
+const data = sheet
+  .getDataRange().getValues();`}
+            </pre>
+          </div>
+        </div>
+
+        <div className="mt-4 bg-gray-900/50 rounded-lg p-4">
+          <div className="text-sm font-bold text-gray-200 mb-2">🔄 Deployment Pipeline</div>
+          <div className="flex flex-wrap items-center gap-2 text-xs">
+            <span className="bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded">🤖 Qwen Coder</span>
+            <span className="text-gray-500">→</span>
+            <span className="bg-gray-700 text-gray-300 px-2 py-1 rounded">Code</span>
+            <span className="text-gray-500">→</span>
+            <span className="bg-purple-500/20 text-purple-400 px-2 py-1 rounded">🐙 Git Push</span>
+            <span className="text-gray-500">→</span>
+            <span className="bg-gray-700 text-gray-300 px-2 py-1 rounded">GitHub</span>
+            <span className="text-gray-500">→</span>
+            <span className="bg-blue-500/20 text-blue-400 px-2 py-1 rounded">▲ Vercel Deploy</span>
+            <span className="text-gray-500">→</span>
+            <span className="bg-green-500/20 text-green-400 px-2 py-1 rounded">✅ Live</span>
+          </div>
         </div>
       </div>
     </div>
