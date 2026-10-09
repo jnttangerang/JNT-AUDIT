@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+/* Custom scrollbar hiding */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for code blocks */
+pre::-webkit-scrollbar {
+  height: 6px;
+}
+pre::-webkit-scrollbar-track {
+  background: #1a1a2e;
+  border-radius: 3px;
+}
+pre::-webkit-scrollbar-thumb {
+  background: #4a4a6a;
+  border-radius: 3px;
+}
+pre::-webkit-scrollbar-thumb:hover {
+  background: #6a6a8a;
+}
+
+/* Code syntax highlighting simulation */
+code {
+  tab-size: 2;
+}
+
+/* Animation for pulse */
+@keyframes glow {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
